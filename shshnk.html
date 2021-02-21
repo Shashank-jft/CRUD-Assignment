@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./shshnk.css">
+    <script src="./shshnk.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <div id="header">
+    <h1>JELLYFISH TECHNOLOGIES</h1>
+  </div>
+
+<div id="counts">
+  <div id="total-counts">
+    <h3 id="1">0</h3>
+  <h4>Total</h4></div>
+  <div id="Add-counter"><h3 id="2">0</h3>
+  <h4>Delete</h4></div>
+  <div id="Delete-counter"><h3 id="3">0</h3>
+    <h4>Add</h4></div>
+  <div id="Edit-counter"><h3 id="4">0</h3>
+    <h4>Edit</h4></div>
+</div>
+  <div class="text-center" id="button1">
+  <button type="button" id = "Adduser" class="btn btn-success" data-toggle="modal" data-target="#exampleModall">Add User</button>
+  </div>
+  <div class="margin marginbottom">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">USERNAME</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody id = "data">
+    </tbody>
+  </table>
+  </div>
+  <!-- Button trigger modal -->
+  <div class="modal fade" id="exampleModalll" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row" id = "myform">
+            <div class="col">
+              Delete ?
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+          <button type="button" class="btn btn-success" onclick="deletee()" data-dismiss="modal">YES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Model -->
+  <div class="modal fade" id="exampleModall" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-row" id = "myform">
+            <div class="col">
+              name : <input type="text" class="form-control" id="name" >
+            </div>
+            <div class="col">
+              username : <input type="text" class="form-control" id="username">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="add(document.getElementById('name').value,document.getElementById('username').value)" data-dismiss="modal">Add User</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Your Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row" id = "myform">
+          <div class="col">
+            name : <input type="text" class="form-control" id="namee" placeholder="">
+          </div>
+          <div class="col">
+            username : <input type="text" class="form-control" id="usernamee">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="edit(document.getElementById('namee').value,document.getElementById('usernamee').value)" onclick="beforeupdate()" data-dismiss="modal">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <h3>SHASHANK RAJPOOT - SOFTWARE TRAINEE</h3>
+</footer>
+</body>
+</html>
